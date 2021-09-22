@@ -43,13 +43,12 @@ app.use(
       secret: SESSION_SECRET,
       auth0Logout: true,
       authRequired: false,
-      baseURL: APP_URL,
-      // 👇 add this 👇
+      baseURL: APP_URL,      
       authorizationParams: {
         response_type: "code id_token",
         audience: "https://expenses-api",
-      },
-      // 👆 add this 👆
+        scopes: "openid profile email read:reports",
+      },      
    })
 );
 
